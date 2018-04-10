@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     skills_name: DataTypes.STRING
   }, {});
   skills.associate = function(models) {
-    // associations can be defined here
+    skills.belongsToMany(achievements, {
+      as: ["Achievements"],
+      through: ["SkillAchievement"],
+    });
   };
   return skills;
 };

@@ -9,7 +9,13 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.STRING
   }, {});
   achievements.associate = function(models) {
-    // associations can be defined here
+    achievements.belongsToMany(models.skills, {
+      as: ["Skills"],
+      through: ["SkillAchievement"]
+    });
   };
   return achievements;
 };
+
+
+
