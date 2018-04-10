@@ -22,10 +22,12 @@
 <body>
     <div class="container-fluid">
         <div class="jumbotron">
+
             <h1 class="display-4">My Coding Journal</h1>
 
             <!-- Tab Directory -->
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+            <ul class="nav nav-pills mb-3 justify-content-md-center" id="pills-tab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link " id="pills-goals-tab" data-toggle="pill" href="#pills-goals" role="tab" aria-controls="pills-goals" aria-selected="false">Goals</a>
                 </li>
@@ -38,6 +40,7 @@
                         aria-selected="false">Completed</a>
                 </li>
             </ul>
+
         </div>
 
         <!-- Tab Links -->
@@ -60,33 +63,81 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- BUTTONS FOR JQUERY -->
-                            <button type="button" class="btn btn-primary" id="goals"> Add Goal</button>
 
+
+                            <!-- Code for the Add Course Modals -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGoal"> Add Goal </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="addGoalLabel">Add a Goal!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <!-- Form Inside of Modal -->
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Name of Goal</label>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What's Your Goal">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1">Goal Type</label>
+                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>Course</option>
+                                                        <option>Project</option>
+                                                        <option>Book</option>
+                                                        <option>Workshop</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput2">Resource Name</label>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="i.e Code Academy">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput3">Resrouce Url</label>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="www.resource.com">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Comments</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect2">Skills Used</label>
+                                                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                                                        <option>HTML</option>
+                                                        <option>CSS</option>
+                                                        <option>Javascript</option>
+                                                        <option>SQL</option>
+                                                        <option>jQuery</option>
+                                                    </select>
+                                                </div>
+
+                                            </form>
+                                            <!-- End of Form in Modal -->
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Not Modal Div -->
                         </form>
                     </div>
                 </div>
-                 <!-- Code for the Add Course modals -->
-                 <div class="modal" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Add Goal</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <label>Goal</label>
-                                    <input id="subject">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                    <button type="button" class="btn btn-secondary">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
             </div>
 
             <!-- In Progress -->
@@ -132,8 +183,6 @@
                         </form>
                         </div>
                     </div>
-
-                   
                 </div>
             </div>
 
