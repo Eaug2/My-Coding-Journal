@@ -1,12 +1,18 @@
+// Dependencies
 var express = require("express");
-
-var router = express.Router();
-
 var db = require("../models");
 
-// Routes
+var router = express.Router();
+var path = require("path");
 
-// Find all achievements with status
+// API Routes
+
+// index route loads index.html
+router.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../views/index.html"));
+});
+
+// Display achievements with status (goal, in-progress, completed). This works for all three routes.
 router.get("/api/achievements/status/:status", function (req, res) {
   db.achievement.findAll({
     where: {
@@ -17,7 +23,7 @@ router.get("/api/achievements/status/:status", function (req, res) {
   });
 });
 
-// Create a skill
+// Create a skill in the skills table in db
 router.post("/api/skills", function (req, res) {
   db.skill.create({
     skills_name: "",
@@ -25,15 +31,16 @@ router.post("/api/skills", function (req, res) {
   });
 });
 
+// Grab all the skills from the skills table in db
 router.get("/api/skills", function(req, res) {
   db.skill.findAll({}).then(function(results) {
     res.json(results)
   });
 });
 
-// Create an achievement
+// Create an achievement in the achievement table in db
 router.post("/api/achievements", function (req, res) {
-  // console.log(req.body);
+  // console.log(req.body.skills);
   db.achievement.create({
     name: "",
     type: "",
@@ -42,6 +49,7 @@ router.post("/api/achievements", function (req, res) {
     comments: "",
     status: ""
   }).then(function (achievement) {
+    // Connect the skills and achievements as many-to-many - option 1
     for (var i = 0; i < req.body.skills.length; i++) {
       achievement.addSkill(req.body.skills[i]);
     }
@@ -49,6 +57,7 @@ router.post("/api/achievements", function (req, res) {
   });
 });
 
+// Connect the skills and achievements as many-to-many - option 2
 router.post("/api/achievements/:id/skills", function (req, res) {
   var skillId = req.body.skillId;
   var achievementId = req.params.id;
@@ -57,7 +66,6 @@ router.post("/api/achievements/:id/skills", function (req, res) {
     console.log(result);
     result.addSkill(skillId);
   });
-
 });
 
 module.exports = router;
