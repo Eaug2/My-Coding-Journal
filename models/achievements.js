@@ -10,8 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   achievements.associate = function(models) {
     achievements.belongsToMany(models.skills, {
-      as: ["Skills"],
-      through: ["SkillAchievement"]
+      through: "SkillAchievement"
     });
   };
   return achievements;
