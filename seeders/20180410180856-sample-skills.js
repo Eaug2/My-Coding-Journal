@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert("Skills", [{
+    return queryInterface.bulkInsert("skills", [{
       skills_name: "HTML5"
     }, {
       skills_name: "CSS"
@@ -26,6 +26,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Skills", null, {});
+    return queryInterface.bulkDelete("skills", null, {});
   }
 };
