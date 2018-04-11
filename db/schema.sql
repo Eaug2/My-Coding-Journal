@@ -2,3 +2,4 @@
 DROP DATABASE IF EXISTS achievements_db;
 
 CREATE DATABASE achievements_db;
+

@@ -32,4 +32,3 @@ applicationCache.addEventListener(PORT, function() {
 
 //Export connection for our ORM to use
 module.exports = connection;
-
