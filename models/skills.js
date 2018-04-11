@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     skills_name: DataTypes.STRING
   }, {});
   skills.associate = function(models) {
-    skills.belongsToMany(models.achievements, {
+    skills.belongsToMany(achievements, {
       as: ["Achievements"],
       through: ["SkillAchievement"],
     });
