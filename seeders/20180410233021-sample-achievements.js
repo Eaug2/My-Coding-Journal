@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert("skills", [{
+    return queryInterface.bulkInsert("achievements", [{
       name: "Learn HTML",
       type: "Course",
       resource_name: "Code Academy",
@@ -15,7 +15,7 @@ module.exports = {
       resource_name: "Code Academy",
       resource_URL: "http://www.codeacademy.com",
       comments: "",
-      status: "In progress"                  
+      status: "In-progress"                  
     }, {
       name: "Intro to SQL",
       type: "Course",
