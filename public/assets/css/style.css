@@ -1,0 +1,34 @@
+body {
+    font-family: 'Sree Krushnadevaraya', serif;
+   
+}
+
+
+.jumbotron { 
+    /* The image used */
+    background-image: url("../images/jumbotronimage.png");
+    height: 75%; 
+    border: 5px dotted black;
+    padding-top: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Berkshire Swash', cursive;
+    
+}
+
+h1 {
+    color: limegreen;
+    text-align: center;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+.nav-link {
+   color: green;
+}
+
+
