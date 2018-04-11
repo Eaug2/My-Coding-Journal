@@ -2,8 +2,8 @@ var express = require("express");
 
 var router = express.Router();
 
-var skills = require("./models/skills.js")
-var achievements = require("./models/achievements.js");
+var db = require("./models")
+
 
 // Routes from the cat example
 // // Create all our routes and set up logic within those routes where required.
