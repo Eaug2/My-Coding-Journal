@@ -1,3 +1,4 @@
-# Project-2
+# Project-2: My Coding Journal
+Team Members: Ellen Stafford, Erik Augenzucker, Klara Boyer, Jennifer Sweatmon.
 
-An app to track your personal coding journey. Keep track of the courses you want to take and then keep a list of the courses you have completed. The user can add courses, subjects and resources (such CodeAcademy).
+An app to track your personal coding journey. Set your goals. Track your progress. List your completed achievements whether they are courses taken, books read, or projects completed.
