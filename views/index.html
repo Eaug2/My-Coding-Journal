@@ -14,6 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="../public/assets/js/mcj.js"></script>
+    <script src="../chosen.jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Sree+Krushnadevaraya" rel="stylesheet">
     <link rel="stylesheet" href="../public/assets/css/style.css" type="text/css" />
     <title>My Coding Journal</title>
 </head>
@@ -57,9 +59,11 @@
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col">
-                                        <p> Goals Text
-                                            <button type="button" class="btn btn-secondary" id="completed">Start</button>
-                                        </p>
+                                        <div class="card-body" id="well-goals">
+                                            Test
+                                            <!-- Button will need to be generated for each Goal -->
+                                            <button type="button" class="btn btn-secondary" id="start">Start</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +88,7 @@
                                             <form>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Name of Goal</label>
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What's Your Goal">
+                                                    <input type="text" class="form-control" id="goalName" placeholder="What's Your Goal">
                                                 </div>
 
                                                 <div class="form-group">
@@ -114,13 +118,31 @@
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlSelect2">Skills Used</label>
-                                                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                                                        <option>HTML</option>
-                                                        <option>CSS</option>
-                                                        <option>Javascript</option>
-                                                        <option>SQL</option>
-                                                        <option>jQuery</option>
+                                                    <select multiple class="form-control" data-placeholder:"Choose Skill(s)" style="display:none" id="exampleFormControlSelect2">
+                                                        <option value="1">HTML</option>
+                                                        <option value="2">CSS</option>
+                                                        <option value="3">Javascript</option>
+                                                        <option value ="4">SQL</option>
+                                                        <option value="5">jQuery</option>
                                                     </select>
+
+                                                    <div class="chosen-container chosen-container-multi chosen-with-drop chosen-container-active">
+                                                        <ul class="chosen-choices">
+                                                          <li class="search-field">
+                                                            <input type="text" value="Choose Skill(s)" class="default" autocomplete="off">
+                                                          </li>
+                                                        </ul>
+                                                        <div class="chosen-drop">
+                                                          <ul class="chosen-results">
+                                                            <li class="active-result highlighted">HTML</li>
+                                                            <li class="active-result">CSS</li>
+                                                            <li class="active-result">Javascript</li>
+                                                            <li class="active-result">SQL</li>
+                                                            <li class="active-result">jQuery</li>
+                                                          </ul>
+                                                        </div>
+                                                      </div>
+                                                      
                                                 </div>
 
                                             </form>
@@ -129,7 +151,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="button" id="addGoalModal" class="btn btn-primary">Add Goal</button>
                                         </div>
                                     </div>
                                 </div>
@@ -153,10 +175,13 @@
 
                                 <div class="form-group">
                                     <div class="col">
-                                        <!-- BUTTONS FOR JQUERY -->
-                                        <p> In Progress Text
-                                            <button type="button" class="btn btn-secondary" id="completed">Completed</button>
-                                        </p>
+                                        <div class="card-body" id="well-inprogress">
+                                            <!-- BUTTONS FOR JQUERY -->
+                                            <p> In Progress Text
+                                                <!-- Button will need to be generated through jQuery -->
+                                                <button type="button" class="btn btn-secondary" id="completed">Completed</button>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +202,9 @@
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col">
-                                        <p> Loremasdasdasdas </p>
+                                        <div class="card-body" id="well-completed">
+                                            <p> Loremasdasdasdas </p>
+                                        </div>
                                     </div>
                                 </div>
                         </form>
