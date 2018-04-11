@@ -7,11 +7,11 @@ if (process.env.JAWS_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
-    // port: 3006;
+    // port: 3006,
     host: "localhost",
     user: "root",
     password: "",
-    database: ""
+    database: "achievements_db"
   });
 };
 
