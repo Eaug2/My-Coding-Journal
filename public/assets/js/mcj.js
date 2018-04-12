@@ -1,25 +1,38 @@
 $(document).ready(function () {
     //Click handler for changing status from Goals to In progress
-    // $(".start").on("click", function () {
-    //     event.preventDefault();
-    //     alert("START");
+    $(document).on("click", ".start", function () {
+        event.preventDefault();
+        alert("START");
+        var id = $(this).attr("data-id");
+        var updatedachieve = {
+            status: "In-progress"
+        }
+        $.ajax({
+            url: "/api/achievements/" + id + "/status",
+            type: 'PUT',
+            data: updatedachieve
+        }).then(function (updatedachieve) {
+            console.log(updatedachieve);
+        });
+    });
 
-    //     var updatedachieve = {
-    //         name: this.name,
-    //         type: this.type,
-    //         resource_name: this.resource_name,
-    //         resource_URL: this.resource_URL,
-    //         comments: this.comments,
-    //         status: "In-progress"
-    //     }
-    //     //Ajax call to move to inprogress page
-    //     $.put("/api/achievements/status/In-progress", updatedachieve)
-    //         .then(function (updatedachieve) {
-    //             console.log(updatedachieve);
-    //         });
-    // });
 
     // //Click handler for changing status from In progress to Completed
+    $(document).on("click", ".completed", function () {
+        event.preventDefault();
+        alert("Completed");
+        var id = $(this).attr("data-id");
+        var updatedachieve = {
+            status: "Completed"
+        }
+        $.ajax({
+            url: "/api/achievements/" + id + "/status",
+            type: 'PUT',
+            data: updatedachieve
+        }).then(function (updatedachieve) {
+            console.log(updatedachieve);
+        });
+    });
     // $(".completed").on("click", function () {
     //     event.preventDefault();
     //     alert("COMPLETED");
@@ -38,6 +51,11 @@ $(document).ready(function () {
     //             console.log(updatedachieve);
     //         });
     // });
+
+
+
+
+
     // var goalName = $("#goalName");
     // var goalType = $("#goalType");
     // var resourceName = $("#resourceName");
@@ -70,33 +88,8 @@ $(document).ready(function () {
 
     //API CALLS
     // Get Call for Goals
-    $.get("/api/achievements/status/Goal", function (data) {
-        for (var i = 0; i < data.length; i++) {
-            // create a parent div for the oncoming elements
-            var wellSection = $("<div>");
-            // add a class to this div: 'well'
-            wellSection.addClass("well");
-            // add an id to the well to mark which well it is
-            wellSection.attr("id", "achievements-well-" + i);
-            // append the well to the well section
-            $("#well-goals").append(wellSection);
 
-            // Now add all of our character data to the well we just placed on the page
 
-            // make the name an h2,
-            $("#achievements-well-" + i).append("<h2>" + data[i].name + "</h2>");
-            // the role an h3,
-            $("#achievements-well-" + i).append("<h3>Type: " + data[i].type + "</h4>");
-            // the age an h3,
-            $("#achievements-well-" + i).append("<h3>Resource Name: " + data[i].resource_name + "</h4>");
-            // and the forcepoints an h3.
-            $("#achievements-well-" + i).append("<h3>Resource URL: " + data[i].resource_URL + "</h4>");
-            $("#achievements-well-" + i).append("<h3>Comments: " + data[i].comments + "</h4>");
-            $("#achievements-well-" + i).append("<button type='button' class='btn btn-secondary start' id='start-'" + i + ">Start</button>");
-
-        }
-    });
-    
     // Get Call for In Progress
     $.get("/api/achievements/status/In-progress", function (data) {
         for (var i = 0; i < data.length; i++) {
@@ -105,22 +98,22 @@ $(document).ready(function () {
             // add a class to this div: 'well'
             wellSection.addClass("well");
             // add an id to the well to mark which well it is
-            wellSection.attr("id", "achievements-well-" + i);
+            wellSection.attr("id", "achievements-progress-" + i);
             // append the well to the well section
             $("#well-inprogress").append(wellSection);
 
             // Now add all of our character data to the well we just placed on the page
 
             // make the name an h2,
-            $("#achievements-well-" + i).append("<h2>" + data[i].name + "</h2>");
+            $("#achievements-progress-" + i).append("<h2>" + data[i].name + "</h2>");
             // the role an h3,
-            $("#achievements-well-" + i).append("<h3>Type: " + data[i].type + "</h4>");
+            $("#achievements-progress-" + i).append("<h3>Type: " + data[i].type + "</h4>");
             // the age an h3,
-            $("#achievements-well-" + i).append("<h3>Resource Name: " + data[i].resource_name + "</h4>");
+            $("#achievements-progress-" + i).append("<h3>Resource Name: " + data[i].resource_name + "</h4>");
             // and the forcepoints an h3.
-            $("#achievements-well-" + i).append("<h3>Resource URL: " + data[i].resource_URL + "</h4>");
-            $("#achievements-well-" + i).append("<h3>Comments: " + data[i].comments + "</h4>");
-            $("#achievements-well-" + i).append("<button type='button' class='btn btn-secondary completed' id='completed-'" + i + ">Completed</button>");
+            $("#achievements-progress-" + i).append("<h3>Resource URL: " + data[i].resource_URL + "</h4>");
+            $("#achievements-progress-" + i).append("<h3>Comments: " + data[i].comments + "</h4>");
+            $("#achievements-progress-" + i).append("<button type='button' class='btn btn-secondary completed' data-id='" + data[i].id + "' id='completed-'" + i + ">Completed</button>");
         }
     });
 
@@ -167,21 +160,21 @@ $(document).ready(function () {
             // add a class to this div: 'well'
             wellSection.addClass("well");
             // add an id to the well to mark which well it is
-            wellSection.attr("id", "acheivements-well-" + i);
+            wellSection.attr("id", "achievements-completed-" + i);
             // append the well to the well section
             $("#well-completed").append(wellSection);
 
             // Now add all of our character data to the well we just placed on the page
 
             // make the name an h2,
-            $("#achievements-well-" + i).append("<h2>" + data[i].name + "</h2>");
+            $("#achievements-completed-" + i).append("<h2>" + data[i].name + "</h2>");
             // the role an h3,
-            $("#achievements-well-" + i).append("<h3>Type: " + data[i].type + "</h4>");
+            $("#achievements-completed-" + i).append("<h3>Type: " + data[i].type + "</h4>");
             // the age an h3,
-            $("#achievements-well-" + i).append("<h3>Resource Name: " + data[i].resource_name + "</h4>");
+            $("#achievements-completed-" + i).append("<h3>Resource Name: " + data[i].resource_name + "</h4>");
             // and the forcepoints an h3.
-            $("#achievements-well-" + i).append("<h3>Resource URL: " + data[i].resource_URL + "</h4>");
-            $("#achievements-well-" + i).append("<h3>Comments: " + data[i].comments + "</h4>");
+            $("#achievements-completed-" + i).append("<h3>Resource URL: " + data[i].resource_URL + "</h4>");
+            $("#achievements-completed-" + i).append("<h3>Comments: " + data[i].comments + "</h4>");
 
         }
     });
@@ -191,4 +184,32 @@ $(document).ready(function () {
     //     var $team = $("#team" + $select.data('team')).html('');
 
     // });
-});
+    $.get("/api/achievements/status/Goal", function (data) {
+        for (var i = 0; i < data.length; i++) {
+            // create a parent div for the oncoming elements
+            var wellSection = $("<div>");
+            // add a class to this div: 'well'
+            wellSection.addClass("well");
+            // add an id to the well to mark which well it is
+            wellSection.attr("id", "achievements-goal-" + i);
+            // append the well to the well section
+            $("#well-goals").append(wellSection);
+    
+            // Now add all of our character data to the well we just placed on the page
+    
+            // make the name an h2,
+            $("#achievements-goal-" + i).append("<h2>" + data[i].name + "</h2>");
+            // the role an h3,
+            $("#achievements-goal-" + i).append("<h3>Type: " + data[i].type + "</h4>");
+            // the age an h3,
+            $("#achievements-goal-" + i).append("<h3>Resource Name: " + data[i].resource_name + "</h4>");
+            // and the forcepoints an h3.
+            $("#achievements-goal-" + i).append("<h3>Resource URL: " + data[i].resource_URL + "</h4>");
+            $("#achievements-goal-" + i).append("<h3>Comments: " + data[i].comments + "</h3>");
+            $("#achievements-goal-" + i).append("<h3>Status: " + data[i].status + "</h3>");
+            $("#achievements-goal-" + i).append("<button type='button' class='btn btn-secondary start' data-id='" + data[i].id + "' id='start-'" + i + ">Start</button>");
+    
+        }
+    });
+    
+})
