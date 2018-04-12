@@ -2,220 +2,188 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="/assets/js/mcj.js"></script>
-    <!-- <script src="/assets/js/chosen.jquery.min.js"></script> -->
-    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Sree+Krushnadevaraya" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-    <title>My Coding Journal</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="/assets/js/mcj.js"></script>
+  <!-- <script src="/assets/js/chosen.jquery.min.js"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Sree+Krushnadevaraya" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+  <title>My Coding Journal</title>
 </head>
 
 
 <body>
-    <div class="container-fluid">
-        <div class="jumbotron">
+  <div class="container-fluid">
+    <div class="jumbotron">
 
-            <h1 class="display-4">My Coding Journal</h1>
+      <h1 class="display-4">My Coding Journal</h1>
 
-            <!-- Tab Directory -->
-            <br>
-            <br>
-            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link " id="pills-goals-tab" data-toggle="pill" href="#pills-goals" role="tab" aria-controls="pills-goals" aria-selected="false">Goals</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-inprogress-tab" data-toggle="pill" href="#pills-inprogress" role="tab" aria-controls="pills-inprogress"
-                        aria-selected="true">In Progress</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-completed-tab" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed"
-                        aria-selected="false">Completed</a>
-                </li>
-            </ul>
+      <!-- Tab Directory -->
+      <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link " id="pills-goals-tab" data-toggle="pill" href="#pills-goals" role="tab" aria-controls="pills-goals" aria-selected="false">Goals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="pills-inprogress-tab" data-toggle="pill" href="#pills-inprogress" role="tab" aria-controls="pills-inprogress"
+            aria-selected="true">In Progress</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-completed-tab" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed"
+            aria-selected="false">Completed</a>
+        </li>
+      </ul>
 
-        </div>
+    </div>
 
-        <!-- Tab Links -->
-        <div class="tab-content" id="pills-tabContent">
-            <!-- Goals -->
-            <div class="tab-pane fade" id="pills-goals" role="tabpanel" aria-labelledby="pills-goals-tab">
+    <!-- Tab Links -->
+    <div class="tab-content" id="pills-tabContent">
+      <!-- Goals -->
+      <div class="tab-pane fade" id="pills-goals" role="tabpanel" aria-labelledby="pills-goals-tab">
 
-                <div class="card">
-                    <div class="card header">
-                        <h2 id="tab-title-goals">Goals</h2>
+        <div class="card">
+          <div class="card header">
+            <h2 class="title" id="tab-title-goals">Goals</h2>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col">
+                    <div class="card-body" id="well-goals">
+
+                      <!-- Button will need to be generated for each Goal -->
+
                     </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col">
-                                        <div class="card-body" id="well-goals">
-                                            Test
-                                            <!-- Button will need to be generated for each Goal -->
-                                            <button type="button" class="btn btn-secondary" id="start">Start</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <!-- Code for the Add Course Modals -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGoal"> Add Goal </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="addGoalLabel">Add a Goal!</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-
-                                            <!-- Form Inside of Modal -->
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Name of Goal</label>
-                                                    <input type="text" class="form-control" id="goalName" placeholder="What's Your Goal">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlSelect1">Goal Type</label>
-                                                    <select class="form-control" id="exampleFormControlSelect1">
-                                                        <option>Course</option>
-                                                        <option>Project</option>
-                                                        <option>Book</option>
-                                                        <option>Workshop</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput2">Resource Name</label>
-                                                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="i.e Code Academy">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput3">Resrouce Url</label>
-                                                    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="www.resource.com">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlTextarea1">Comments</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlSelect2">Skills Used</label>
-                                                    <select multiple class="form-control" data-placeholder:"Choose Skill(s)" style="display:none" id="exampleFormControlSelect2">
-                                                        <option value="1">HTML</option>
-                                                        <option value="2">CSS</option>
-                                                        <option value="3">Javascript</option>
-                                                        <option value ="4">SQL</option>
-                                                        <option value="5">jQuery</option>
-                                                    </select>
-
-                                                    <div class="chosen-container chosen-container-multi chosen-with-drop chosen-container-active">
-                                                        <ul class="chosen-choices">
-                                                          <li class="search-field">
-                                                            <input type="text" value="Choose Skill(s)" class="default" autocomplete="off">
-                                                          </li>
-                                                        </ul>
-                                                        <div class="chosen-drop">
-                                                          <ul class="chosen-results">
-                                                            <li class="active-result highlighted">HTML</li>
-                                                            <li class="active-result">CSS</li>
-                                                            <li class="active-result">Javascript</li>
-                                                            <li class="active-result">SQL</li>
-                                                            <li class="active-result">jQuery</li>
-                                                          </ul>
-                                                        </div>
-                                                      </div>
-                                                      
-                                                </div>
-
-                                            </form>
-                                            <!-- End of Form in Modal -->
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" id="addGoalModal" class="btn btn-primary">Add Goal</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Not Modal Div -->
-                        </form>
-                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <!-- In Progress -->
-            <div class="tab-pane fade show active" id="pills-inprogress" role="tabpanel" aria-labelledby="pills-inprogress-tab">
-                <div class="card">
-                    <div class="card header">
-                        <h2 id="tab-title-in-progress">In Progress</h2>
-                    </div>
-                    <div class="card-body">
-                        <!-- Form -->
-                        <form>
-                            <div class="row">
 
-                                <div class="form-group">
-                                    <div class="col">
-                                        <div class="card-body" id="well-inprogress">
-                                            <!-- BUTTONS FOR JQUERY -->
-                                            <p> In Progress Text
-                                                <!-- Button will need to be generated through jQuery -->
-                                                <button type="button" class="btn btn-secondary" id="completed">Completed</button>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+              <!-- Code for the Add Course Modals -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGoal"> Add Goal </button>
 
-            <!-- Completed -->
-            <div class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab">
-                <div class="card">
-                    <div class="card header">
-                        <h2 id="tab-title-completed">Completed</h2>
+              <!-- Modal -->
+              <div class="modal fade" id="addGoal" tabindex="-1" role="dialog" aria-labelledby="addGoalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addGoalLabel">Add a Goal!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
-                    <div class="card-body">
-                        <!-- Form -->
-                        <form>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col">
-                                        <div class="card-body" id="well-completed">
-                                            <p> Loremasdasdasdas </p>
-                                        </div>
-                                    </div>
-                                </div>
-                        </form>
+                    <div class="modal-body">
+
+                      <!-- Form Inside of Modal -->
+                      <form>
+                        <div class="form-group">
+                          <label for="goalName">Name of Goal</label>
+                          <input type="text" class="form-control" id="goalName" placeholder="What's Your Goal">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="goalType">Goal Type</label>
+                          <select class="form-control" id="goalType">
+                            <option>Course</option>
+                            <option>Project</option>
+                            <option>Book</option>
+                            <option>Workshop</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceName">Resource Name</label>
+                          <input type="text" class="form-control" id="resourceName" placeholder="i.e Code Academy">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceURL">Resource Url</label>
+                          <input type="text" class="form-control" id="resourceURL" placeholder="www.resource.com">
+                        </div>
+                        <div class="form-group">
+                          <label for="comments">Comments</label>
+                          <textarea class="form-control" id="comments" rows="3" placeholder="Back-End Development"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="skills">Skills</label>
+                          <textarea class="form-control" id="skills" rows="3" placeholder="HTML, CSS, Javascript, Storyboarding"></textarea>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="addGoalModal" class="btn btn-primary">Add Goal</button>
+                    </div>
+                  </div>
                 </div>
-            </div>
-
+              </div>
+              <!-- Not Modal Div -->
+              </form>
+          </div>
         </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="tab-pane fade show active" id="pills-inprogress" role="tabpanel" aria-labelledby="pills-inprogress-tab">
+        <div class="card">
+          <div class="card header">
+            <h2 class="title" id="tab-title-in-progress">In Progress</h2>
+          </div>
+          <div class="card-body">
+            <!-- Form -->
+            <form>
+              <div class="row">
+
+                <div class="form-group">
+                  <div class="col">
+                    <div class="card-body" id="well-inprogress">
+                      
+                        <!-- Button will need to be generated through jQuery -->
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab">
+        <div class="card">
+          <div class="card header">
+            <h2 class="title" id="tab-title-completed">Completed</h2>
+          </div>
+          <div class="card-body">
+            <!-- Form -->
+            <form>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col">
+                    <div class="card-body" id="well-completed">
+                     
+                      <!-- Completed Div -->
+
+                    </div>
+                  </div>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
 </body>
 
 </html>

@@ -7,20 +7,51 @@ body {
     background-image: url("../images/jumbotronimage.png");
     height: 75%; 
     border: 5px dotted black;
-    padding-top: 10%;
+    padding-top: 5%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Berkshire Swash', cursive;
     
 }
+
+#well-goals,
+#well-inprogress,
+#well-completed {
+    text-align: center;
+    margin: auto;
+    
+}
 h1 {
     color: limegreen;
     text-align: center;
-    margin-top:-50px;
+    margin-top:3%;
+    margin-bottom:1%;
+}
+.nav {
+    margin-top: 3%;
+    margin-bottom: 1%;
 }
 h2 {
     text-align: center;
+    font-family: 'Sree Krushnadevaraya', serif;
+    font-size: 1.5em;
+}
+.title {
+    text-align: center;
+    font-family: 'Sree Krushnadevaraya', serif;
+    background-color: lightgrey;
+    border-bottom: 2px solid lightblue;
+    border-top: 2px solid lightblue;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    font-weight: bold;
+    font-size: 2em;
+}
+h3 {
+    text-align: center;
+    font-family: 'Sree Krushnadevaraya', serif;
+    font-size: 1em;
 }
 .nav-link {
    color: green;

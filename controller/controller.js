@@ -30,6 +30,7 @@ router.put("/api/achievements/:id/status", function (req, res) {
     }
   }).then(function(result) {
     res.json(result);
+    // res.redirect("../views/index.html")
   });
 });
 
