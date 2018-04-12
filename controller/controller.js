@@ -23,9 +23,14 @@ router.get("/api/achievements/status/:status", function (req, res) {
   });
 });
 
-router.put("/api/achievements/status/:status", function (req, res) {
-  db.achievement.
-});
+// router.put("/api/achievements/status/goal", function (req, res) {
+//   db.achievement.findAll({
+//     "tab-title-completed"
+
+//   }).then(function (req, res) {
+//     res.sendFile(path.join(__dirname, "../views/index.html"));
+//   });
+// });
 
 // Create a skill in the skills table in database
 router.post("/api/skills", function (req, res) {
@@ -38,6 +43,13 @@ router.post("/api/skills", function (req, res) {
 // Grab all the skills from the skills table in database
 router.get("/api/skills", function(req, res) {
   db.skill.findAll({}).then(function(results) {
+    res.json(results)
+  });
+});
+
+// Grab all the achievements from the skills table in database
+router.get("/api/achievements", function(req, res) {
+  db.achievements.findAll({}).then(function(results) {
     res.json(results)
   });
 });
