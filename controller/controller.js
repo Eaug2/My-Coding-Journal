@@ -23,12 +23,13 @@ router.get("/api/achievements/status/:status", function (req, res) {
   });
 });
 
-router.put("/api/achievements/status/goal", function (req, res) {
-  db.achievement.findAll({
-    where: "tab-title-completed",
-
-  }).then(function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+router.put("/api/achievements/:id/status", function (req, res) {
+  db.achievement.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  }).then(function(result) {
+    res.json(result);
   });
 });
 
