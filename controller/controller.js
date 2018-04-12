@@ -23,14 +23,14 @@ router.get("/api/achievements/status/:status", function (req, res) {
   });
 });
 
-// router.put("/api/achievements/status/goal", function (req, res) {
-//   db.achievement.findAll({
-//     "tab-title-completed"
+router.put("/api/achievements/status/goal", function (req, res) {
+  db.achievement.findAll({
+    where: "tab-title-completed",
 
-//   }).then(function (req, res) {
-//     res.sendFile(path.join(__dirname, "../views/index.html"));
-//   });
-// });
+  }).then(function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+});
 
 // Create a skill in the skills table in database
 router.post("/api/skills", function (req, res) {
