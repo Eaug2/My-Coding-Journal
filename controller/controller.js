@@ -59,30 +59,33 @@ router.get("/api/achievements", function(req, res) {
 router.post("/api/achievements", function (req, res) {
   // console.log(req.body.skills);
   db.achievement.create({
-    name: "",
-    type: "",
-    resource_name: "",
-    resource_URL: "",
-    comments: "",
-    status: ""
+    name: req.body.name,
+    type: req.body.type,
+    resource_name: req.body.resource_name,
+    resource_URL: req.body.resource_URL,
+    comments: req.body.comments,
+    status: req.body.status,
+    skillsA: req.body.skillsA
   }).then(function (achievement) {
+    // FUTURE DEVELOPMENT
     // Connect the skills and achievements as many-to-many - option 1
-    for (var i = 0; i < req.body.skills.length; i++) {
-      achievement.addSkill(req.body.skills[i]);
-    }
+    // for (var i = 0; i < req.body.skills.length; i++) {
+    //   achievement.addSkill(req.body.skills[i]);
+    // }
     res.json(achievement);
   });
 });
 
-// Connect the skills and achievements as many-to-many - option 2
-router.post("/api/achievements/:id/skills", function (req, res) {
-  var skillId = req.body.skillId;
-  var achievementId = req.params.id;
+// FUTURE DEVELOPMENT
+// // Connect the skills and achievements as many-to-many - option 2
+// router.post("/api/achievements/:id/skills", function (req, res) {
+//   var skillId = req.body.skillId;
+//   var achievementId = req.params.id;
 
-  db.achievement.findById(achievementId).then(function(result) {
-    console.log(result);
-    result.addSkill(skillId);
-  });
-});
+//   db.achievement.findById(achievementId).then(function(result) {
+//     console.log(result);
+//     result.addSkill(skillId);
+//   });
+// });
 
 module.exports = router;
