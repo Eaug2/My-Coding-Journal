@@ -49,7 +49,7 @@ router.get("/api/skills", function(req, res) {
 
 // Grab all the achievements from the skills table in database
 router.get("/api/achievements", function(req, res) {
-  db.achievements.findAll({}).then(function(results) {
+  db.achievement.findAll({}).then(function(results) {
     res.json(results)
   });
 });
