@@ -9,9 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       type: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       resource_name: {
@@ -24,6 +26,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       status: {
+        allowNull: false,
+        default: "Goal",
         type: Sequelize.STRING
       },
       createdAt: {

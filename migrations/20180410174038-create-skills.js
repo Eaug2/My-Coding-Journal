@@ -9,6 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       skills_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {
