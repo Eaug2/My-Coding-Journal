@@ -1,56 +1,71 @@
+// Dependencies
 var express = require("express");
+var db = require("../models");
 
 var router = express.Router();
+var path = require("path");
 
-var db = require("./models")
+// API Routes
 
+// index route loads index.html
+router.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../views/index.html"));
+});
 
-// Routes from the cat example
-// // Create all our routes and set up logic within those routes where required.
-// router.get("/", function(req, res) {
-//   cat.all(function(data) {
-//     var hbsObject = {
-//       cats: data
-//     };
-//     console.log(hbsObject);
-//     res.render("index", hbsObject);
-//   });
-// });
+// Display achievements with status (goal, in-progress, completed). This works for all three routes.
+router.get("/api/achievements/status/:status", function (req, res) {
+  db.achievement.findAll({
+    where: {
+      status: req.params.status
+    }
+  }).then(function (result) {
+    return res.json(result);
+  });
+});
 
-// router.post("/api/cats", function(req, res) {
-//   cat.create([
-//     "name", "sleepy"
-//   ], [
-//     req.body.name, req.body.sleepy
-//   ], function(result) {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
+// Create a skill in the skills table in db
+router.post("/api/skills", function (req, res) {
+  db.skill.create({
+    skills_name: "",
+  }).then(function (skill) {
+  });
+});
 
-// router.put("/api/cats/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
+// Grab all the skills from the skills table in db
+router.get("/api/skills", function(req, res) {
+  db.skill.findAll({}).then(function(results) {
+    res.json(results)
+  });
+});
 
-//   console.log("condition", condition);
+// Create an achievement in the achievement table in db
+router.post("/api/achievements", function (req, res) {
+  // console.log(req.body.skills);
+  db.achievement.create({
+    name: "",
+    type: "",
+    resource_name: "",
+    resource_URL: "",
+    comments: "",
+    status: ""
+  }).then(function (achievement) {
+    // Connect the skills and achievements as many-to-many - option 1
+    for (var i = 0; i < req.body.skills.length; i++) {
+      achievement.addSkill(req.body.skills[i]);
+    }
+    res.json(achievement);
+  });
+});
 
-//   cat.update({
-//     sleepy: req.body.sleepy
-//   }, condition, function(result) {
-//     if (result.changedRows == 0) {
-//       // If no rows were changed, then the ID must not exist, so 404
-//       return res.status(404).end();
-//     } else {
-//       res.status(200).end();
-//     }
-//   });
-// });
+// Connect the skills and achievements as many-to-many - option 2
+router.post("/api/achievements/:id/skills", function (req, res) {
+  var skillId = req.body.skillId;
+  var achievementId = req.params.id;
 
-// router.delete("/cats/delete/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-//   cat.delete(condition, function() {
-//     res.redirect("/");
-//   });
-// });
+  db.achievement.findById(achievementId).then(function(result) {
+    console.log(result);
+    result.addSkill(skillId);
+  });
+});
 
-// Export routes for server.js to use
 module.exports = router;

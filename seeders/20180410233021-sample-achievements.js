@@ -72,28 +72,28 @@ module.exports = {
       resource_URL: "https://www.codecademy.com/catalog/subject/web-development",
       comments: "Jquery makes life easier.",
       status: "In-progress"                
-    }, {
+    }, {               
       name: "Learn HTML",
       type: "Course",
       resource_name: "Code Academy",
       resource_URL: "https://www.codecademy.com/catalog/subject/web-development",
       comments: "Great course!",
       status: "Completed"                
-    }, {
+    }, {               
       name: "Learn CSS",
       type: "Course",
       resource_name: "Code Academy",
       resource_URL: "https://www.codecademy.com/catalog/subject/web-development",
       comments: "Good introduction",
       status: "Completed"                
-    }, {
+    }, {               
       name: "Intro to HTML/CSS",
       type: "Course",
       resource_name: "Khan Academy",
       resource_URL: "https://www.khanacademy.org/",
       comments: "Excellent refresher course.",
       status: "Completed"                
-    }, {
+    },{
       name: "HTML/JS: Making Webpages Interactive",
       type: "Course",
       resource_name: "Khan Academy",
@@ -107,27 +107,6 @@ module.exports = {
       resource_URL: "https://bradleyaw.github.io/RecRec/",
       comments: "Our 1st Team Project",
       status: "Completed"                
-    }, {
-      name: "",
-      type: "",
-      resource_name: "",
-      resource_URL: "",
-      comments: "",
-      status: ""                
-    }, {
-      name: "",
-      type: "",
-      resource_name: "",
-      resource_URL: "",
-      comments: "",
-      status: ""                
-    }, {
-      name: "",
-      type: "",
-      resource_name: "",
-      resource_URL: "",
-      comments: "",
-      status: ""                
     }], {});
   },
 
