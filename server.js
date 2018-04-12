@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Parse application/json
 app.use(bodyParser.json());
 
+// Static Express
+app.use(express.static("public"));
+
 // Require and run controller.js
 var controller = require("./controller/controller.js");
 app.use("/", controller);
