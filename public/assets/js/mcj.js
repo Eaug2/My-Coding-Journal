@@ -5,7 +5,7 @@ $(document).ready(function () {
         alert("START");
 
         //Ajax call to move to inprogress page
-        $.post("/api/inprogress", newGoal)
+        $.post("/api/achievements/status/In-progress", newGoal)
         .then(function(data){
             console.log(data);
         });
@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
         alert("Modal");
         //Post For New Goal
-        $.post("/api/new", newGoal)
+        $.post("/api/achievements/status/Goal", newGoal)
             // on success, run this callback
             .then(function (data) {
                 // log the data we found
@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     //API CALLS
     // Get Call for Goals
-    $.get("/api/new", function (data) {
+    $.get("/api/achievements/status/Goal", function (data) {
         for (var i = 0; i < data.length; i++) {
             // create a parent div for the oncoming elements
             var wellSection = $("<div>");
@@ -69,7 +69,7 @@ $(document).ready(function () {
     });
 
     // Get Call for In Progress
-    $.get("/api/inprogress", function (data) {
+    $.get("/api/achievements/status/In-progress", function (data) {
         for (var i = 0; i < data.length; i++) {
             // create a parent div for the oncoming elements
             var wellSection = $("<div>");
@@ -94,7 +94,7 @@ $(document).ready(function () {
     });
 
     // Get Call for Conpleted
-    $.get("/api/completed", function (data) {
+    $.get("/api/achievements/status/Completed", function (data) {
         for (var i = 0; i < data.length; i++) {
             // create a parent div for the oncoming elements
             var wellSection = $("<div>");
@@ -117,10 +117,10 @@ $(document).ready(function () {
             $("#character-well-" + i).append("<h3>Force Points: " + data[i].forcePoints + "</h4>");
         }
     });
-    $("select").val('').chosen().change(function(){
-        $select = $(this);
-        var pokemon = $select.val();
-        var $team = $("#team" + $select.data('team')).html('');
+    // $("select").val('').chosen().change(function(){
+    //     $select = $(this);
+    //     var pokemon = $select.val();
+    //     var $team = $("#team" + $select.data('team')).html('');
         
-    });
+    // });
 });
