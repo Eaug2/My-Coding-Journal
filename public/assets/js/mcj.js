@@ -41,11 +41,11 @@ $(document).ready(function () {
     $(document).on("click", "#addGoalModal", function (event) {
         event.preventDefault();
         var goalName = $("#goalName").val().trim();
-        var goalType = $("#goalType");
-        var resourceName = $("#resourceName");
-        var resourceURL = $("#resourceURL");
-        var comments = $("#comments");
-        var skills = $("#skills");
+        var goalType = $("#goalType").val().trim();
+        var resourceName = $("#resourceName").val().trim();
+        var resourceURL = $("#resourceURL").val().trim();
+        var comments = $("#comments").val().trim();
+        var skills = $("#skills").val().trim();
         var achievement = {
             name: goalName,
             type: goalType,
