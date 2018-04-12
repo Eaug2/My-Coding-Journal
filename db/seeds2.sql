@@ -1,4 +1,4 @@
-USE q877emlws16kzz65;
+USE ijodhtk9gliyf0b5;
 
 INSERT INTO achievements (name, type, resource_name, resource_URL, comments, status) 
     VALUES ('JavaScript: The Good Parts by Douglas Crockford', 'Book', 'OReilly/Yahoo Press', 'http://shop.oreilly.com/product/9780596517748.do', 'Interesting. Old from 2008.', 'Goal');
@@ -69,5 +69,5 @@ INSERT INTO skills (skills_name) VALUES ('Algorithms');
 INSERT INTO skills (skills_name) VALUES ('Sequelize');
 
 
-SELECT*FROM q877emlws16kzz65.achievements;
-SELECT*FROM q877emlws16kzz65.skills;
+SELECT*FROM ijodhtk9gliyf0b5.achievements;
+SELECT*FROM ijodhtk9gliyf0b5.skills;
