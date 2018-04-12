@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 
 // Require and run controller.js
 var controller = require("./controller/controller.js");
-app.use(controller);
+app.use("/", controller);
 
 // Temporary solution in place of migrations. In order to keep the data in the database ({ force:false }). 
 // And to reload the data ({ force: true }).
-db.sequelize.sync({ force:false }).then(function() {
+db.sequelize.sync({ force:true }).then(function() {
   app.listen(PORT, function() {
     console.log("Listening on port: " + PORT);
   });
