@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     resource_name: DataTypes.STRING,
     resource_URL: DataTypes.STRING,
     comments: DataTypes.STRING,
-    status: DataTypes.STRING, // This is what will be showing up with the list of goals
+    status: DataTypes.STRING,
     skillsA: DataTypes.STRING
   }, {});
   achievements.associate = function(models) {
