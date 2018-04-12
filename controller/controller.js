@@ -5,12 +5,12 @@ var db = require("../models");
 var router = express.Router();
 var path = require("path");
 
-// API Routes
-
-// index route loads index.html
+// HTML Route loads index.html
 router.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../views/index.html"));
 });
+
+// API Routes
 
 // Display achievements with status (goal, in-progress, completed). This works for all three routes.
 router.get("/api/achievements/status/:status", function (req, res) {
@@ -23,7 +23,11 @@ router.get("/api/achievements/status/:status", function (req, res) {
   });
 });
 
-// Create a skill in the skills table in db
+router.put("/api/achievements/status/:status", function (req, res) {
+  db.achievement.
+});
+
+// Create a skill in the skills table in database
 router.post("/api/skills", function (req, res) {
   db.skill.create({
     skills_name: "",
@@ -31,14 +35,14 @@ router.post("/api/skills", function (req, res) {
   });
 });
 
-// Grab all the skills from the skills table in db
+// Grab all the skills from the skills table in database
 router.get("/api/skills", function(req, res) {
   db.skill.findAll({}).then(function(results) {
     res.json(results)
   });
 });
 
-// Create an achievement in the achievement table in db
+// Create an achievement in the achievement table in database
 router.post("/api/achievements", function (req, res) {
   // console.log(req.body.skills);
   db.achievement.create({
