@@ -84,12 +84,12 @@ $(document).ready(function () {
 
             $("#achievements-goal-" + i).append("<h2>" + data[i].name + "</h2>");
             $("#achievements-goal-" + i).append("<h3>Type: " + data[i].type + "</h3>");
-            $("#achievements-goal-" + i).append("<h3>Resource Name:<a href="+data[i].resource_URL+">" + data[i].resource_name + "</a></h3>");
+            $("#achievements-goal-" + i).append("<h3>Resource Name: <a href="+data[i].resource_URL+"> " + data[i].resource_name + "</a></h3>");
             $("#achievements-goal-" + i).append("<h3>Comments: " + data[i].comments + "</h3>");
-            $("#achievements-goal-" + i).append("<h3>Status: " + data[i].status + "</h3>");
             $("#achievements-goal-" + i).append("<h3>Skills Used: " + data[i].skillsA + "</h3>");
-            $("#achievements-goal-" + i).append("<button type='button' class='btn btn-secondary start' data-id='" + data[i].id + "' id='start-'" + i + ">Start</button>");
             $("#achievements-goal-" + i).append("<br>");
+            $("#achievements-goal-" + i).append("<button type='button' class='btn btn-secondary start' data-id='" + data[i].id + "' id='start-'" + i + ">Start</button>");
+            $("#achievements-goal-" + i).append("<br><br><br>");
 
         }
     });
@@ -111,11 +111,12 @@ $(document).ready(function () {
 
             $("#achievements-progress-" + i).append("<h2>" + data[i].name + "</h2>");
             $("#achievements-progress-" + i).append("<h3>Type: " + data[i].type + "</h3>");
-            $("#achievements-progress-" + i).append("<h3>Resource Name:<a href="+data[i].resource_URL+">" + data[i].resource_name + "</a></h3>");
+            $("#achievements-progress-" + i).append("<h3>Resource Name: <a href="+data[i].resource_URL+"> " + data[i].resource_name + "</a></h3>");
             $("#achievements-progress-" + i).append("<h3>Comments: " + data[i].comments + "</h3>");
             $("#achievements-progress-" + i).append("<h3>Skills Used: " + data[i].skillsA + "</h3>");
-            $("#achievements-progress-" + i).append("<button type='button' class='btn btn-secondary completed' data-id='" + data[i].id + "' id='completed-'" + i + ">Completed</button>");
             $("#achievements-progress-" + i).append("<br>");
+            $("#achievements-progress-" + i).append("<button type='button' class='btn btn-secondary completed' data-id='" + data[i].id + "' id='completed-'" + i + ">Completed</button>");
+            $("#achievements-progress-" + i).append("<br><br><br>");
         }
     });
 
@@ -137,10 +138,10 @@ $(document).ready(function () {
 
             $("#achievements-completed-" + i).append("<h2>" + data[i].name + "</h2>");
             $("#achievements-completed-" + i).append("<h3>Type: " + data[i].type + "</h3>");
-            $("#achievements-completed-" + i).append("<h3>Resource Name:<a href="+data[i].resource_URL+">" + data[i].resource_name + "</a></h3>");
+            $("#achievements-completed-" + i).append("<h3>Resource Name: <a href="+data[i].resource_URL+"> " + data[i].resource_name + "</a></h3>");
             $("#achievements-completed-" + i).append("<h3>Comments: " + data[i].comments + "</h3>");
             $("#achievements-completed-" + i).append("<h3>Skills Used: " + data[i].skillsA + "</h3>");
-            $("#achievements-completed-" + i).append("<br>");
+            $("#achievements-completed-" + i).append("<br><br><br>");
         }
     });
 });
